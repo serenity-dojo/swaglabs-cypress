@@ -1,15 +1,16 @@
 /// <reference types='cypress'/>
 
+import { LoginAction } from "../../actions/login-action";
 import { CheckoutConfirmation } from "../../page-objects/checkout-confirmation";
 import { CheckoutInformation } from "../../page-objects/checkout-information";
 import { CheckoutOverview } from "../../page-objects/checkout-overview";
-import { LoginPage } from "../../page-objects/login-page";
+import { LoginPage } from "../../page-objects/login-form";
 import { ProductCatalog } from "../../page-objects/product-catalog";
 import { ShoppingCart } from "../../page-objects/shopping-cart";
 
 describe('When placing items in the cart', () => {
 
-    const loginPage = new LoginPage()
+    const login = new LoginAction()
     const productCatalog = new ProductCatalog()
     const shoppingCart = new ShoppingCart()
     const checkoutInformation = new CheckoutInformation()
@@ -17,8 +18,7 @@ describe('When placing items in the cart', () => {
     const checkoutConfirmation = new CheckoutConfirmation()
 
     beforeEach(() => {
-        loginPage.open()
-        loginPage.loginWith("standard_user", "secret_sauce")
+        login.withCredentials("standard_user", "secret_sauce")
 
         productCatalog.addItemToCartCalled('Sauce Labs Backpack')
         productCatalog.addItemToCartCalled('Sauce Labs Bolt T-Shirt')

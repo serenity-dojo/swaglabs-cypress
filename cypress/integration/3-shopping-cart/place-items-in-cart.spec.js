@@ -1,18 +1,17 @@
 /// <reference types='cypress'/>
 
-import { LoginPage } from "../../page-objects/login-page";
+import { LoginAction } from "../../actions/login-action";
 import { ProductCatalog } from "../../page-objects/product-catalog";
 import { ShoppingCart } from "../../page-objects/shopping-cart";
 
 describe('When placing items in the cart', () => {
 
-    const loginPage = new LoginPage()
+    const login = new LoginAction()
     const productCatalog = new ProductCatalog()
     const shoppingCart = new ShoppingCart()
 
     beforeEach(() => {
-        loginPage.open()
-        loginPage.loginWith("standard_user", "secret_sauce")
+        login.withCredentials("standard_user", "secret_sauce")
     });
 
     describe('Adding a single item', () => {
