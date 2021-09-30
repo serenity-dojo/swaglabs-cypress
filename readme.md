@@ -11,7 +11,7 @@ We start with a Use Case analysis to understand the high level capabilities that
 ## Example Mapping
 We can use Example Mapping to explore business rules and acceptance criterias, discussing examples and counter examples of these rules to expand our understanding and identify the most important scenarios to automate:
 
-![image](docs/example-maping.png)
+![image](docs/example-mapping.png)
 
 ## Feature Mapping
 
