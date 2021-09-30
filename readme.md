@@ -9,19 +9,29 @@ We start with a Use Case analysis to understand the high level capabilities that
 ![image](docs/use-cases.png)
 
 ## Example Mapping
-We can use Example Mapping to explore business rules and acceptance criterias, discussing examples and counter examples of these rules to expand our understanding and identify the most important scenarios to automate:
+We can use [Example Mapping](https://cucumber.io/blog/bdd/example-mapping-introduction/) to explore business rules and acceptance criterias, discussing examples and counter examples of these rules to expand our understanding and identify the most important scenarios to automate:
 
 ![image](docs/example-mapping.png)
 
+Example Mapping is a quick and effective way to organise and list the key business scenarios, including both positive and negative cases, to ensure that we are automating the scenarios that really matter to the business.
+
 ## Feature Mapping
 
-For user journeys such as choosing a product and completing the purchase, Feature Maps can be a good option:
+Example Mapping is a fast, bredth-first approach that works well for many contexts. But sometimes we need to drill into the details a little more. When we want to explore user journeys, data flows or more complex business processes, such as choosing a product and completing the purchase, [Feature Maps]((https://johnfergusonsmart.com/feature-mapping-a-lightweight-requirements-discovery-practice-for-agile-teams/)) can be a good option:
 
 ![image](docs/feature-map.png)
 
+Feature Mapping is another way to identify key scenarios that we need to automate, and is a good choice when looking for longer "user journey"-style scenarios.
+
 ## Automating the scenarios
 
-In this sample project you can see these scenarios automated using Cypress.
+In this sample project you can see these scenarios automated using Cypress. The Cypress tests are run using Mocha and generate a test report using Mochawesome. You can run the tests using 
+```
+npm test
+```
+
+This will run the Cypress tests in headless mode and generate a test report in the `cypress/reports/mochareports/report.html` directory:
+![image](docs/mocha.png)
 
 Additional Resources: 
  * [Cypress Documentation](https://www.cypress.io)
